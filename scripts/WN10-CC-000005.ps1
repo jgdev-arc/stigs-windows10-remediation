@@ -1,3 +1,20 @@
+<#
+╔════════════════════════════════════════════════════════════════╗
+║                          SCRIPT NOTES                          ║
+╚════════════════════════════════════════════════════════════════╝
+
+Author          : Jonathan Gistand  
+LinkedIn        : linkedin.com/in/jgdev/  
+GitHub          : github.com/jgdev-arc  
+Date Created    : 2025-06-02  
+Last Modified   : 2025-06-02  
+Version         : 1.0  
+CVEs            : N/A  
+Plugin IDs      : N/A  
+STIG-ID         : WN10-CC-000005
+
+#>
+
 # Disable camera access from the lock screen
 $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization"
 $propertyName = "NoLockScreenCamera"
