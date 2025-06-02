@@ -1,3 +1,20 @@
+<#
+╔════════════════════════════════════════════════════════════════╗
+║                          SCRIPT NOTES                          ║
+╚════════════════════════════════════════════════════════════════╝
+
+Author          : Jonathan Gistand  
+LinkedIn        : linkedin.com/in/jgdev/  
+GitHub          : github.com/jgdev-arc  
+Date Created    : 2025-06-02  
+Last Modified   : 2025-06-02  
+Version         : 1.0  
+CVEs            : N/A  
+Plugin IDs      : N/A  
+STIG-ID         : WN10-AU-000500
+
+#>
+
 # Set Application event log maximum size to 32 MB (32768 KB)
 $regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\EventLog\Application"
 $propertyName = "MaxSize"
@@ -48,16 +65,5 @@ Write-Output "✅ Application event log maximum size set to 32768 KB. (STIG: WN1
 
 ■ Compliance Result  
   ✅ Application log size is now compliant with the STIG requirement.
-
-■ Notes  
-  Author          : Jonathan Gistand  
-  LinkedIn        : linkedin.com/in/jgdev/  
-  GitHub          : github.com/jgdev-arc  
-  Date Created    : 2025-06-02  
-  Last Modified   : 2025-06-02  
-  Version         : 1.0  
-  CVEs            : N/A  
-  Plugin IDs      : N/A  
-  STIG-ID         : WN10-AU-000500
 
 #>
