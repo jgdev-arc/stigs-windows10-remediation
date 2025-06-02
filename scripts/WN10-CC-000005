@@ -1,0 +1,51 @@
+<#
+.SYNOPSIS
+    This PowerShell script disables camera access from the lock screen, enforcing compliance with STIG WN10-CC-000005.
+
+.NOTES
+    Author          : Jonathan Gistand
+    LinkedIn        : https://linkedin.com/in/jgdev/
+    GitHub          : https://github.com/jgdev-arc
+    Date Created    : 2025-06-02
+    Last Modified   : 2025-06-02
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000005
+#>
+
+# Disable lock screen camera access
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization"
+$propertyName = "NoLockScreenCamera"
+$desiredValue = 1
+
+# Create registry key if needed
+if (-not (Test-Path $regPath)) {
+    New-Item -Path $regPath -Force | Out-Null
+}
+
+# Set value to disable camera on lock screen
+New-ItemProperty -Path $regPath -Name $propertyName -Value $desiredValue -PropertyType DWord -Force | Out-Null
+
+Write-Output "✅ Lock screen camera access has been disabled. (V-220700)"
+
+
+<#
+README
+
+# STIG: WN10-CC-000005 – Disable Lock Screen Camera
+
+## 🔐 Overview
+
+This STIG requires disabling **camera access on the Windows 10 lock screen** to prevent unauthorized interaction with the device before user authentication.
+
+- **STIG ID:** WN10-CC-000005  
+- **Rule Title:** Camera access from the lock screen must be disabled  
+- **Required Value:** Enabled (`NoLockScreenCamera = 1`)
+
+## ⚙️ What This Script Does
+
+- Creates the required registry path
+- Sets the value to disable camera use while on the lock screen
+
+#>
