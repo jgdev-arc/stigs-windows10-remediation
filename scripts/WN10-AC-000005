@@ -1,17 +1,18 @@
 <#
-.SYNOPSIS
-    This PowerShell script ensures that the Account Lockout Duration is configured to a minimum of 15 minutes, in compliance with STIG WN10-AC-000005.
+╔════════════════════════════════════════════════════════════════╗
+║                          SCRIPT NOTES                          ║
+╚════════════════════════════════════════════════════════════════╝
 
-.NOTES
-    Author          : Jonathan Gistand
-    LinkedIn        : https://linkedin.com/in/jgdev/
-    GitHub          : https://github.com/jgdev-arc
-    Date Created    : 2025-06-02
-    Last Modified   : 2025-06-02
-    Version         : 1.0
-    CVEs            : N/A
-    Plugin IDs      : N/A
-    STIG-ID         : WN10-AC-000005
+Author          : Jonathan Gistand  
+LinkedIn        : linkedin.com/in/jgdev/  
+GitHub          : github.com/jgdev-arc  
+Date Created    : 2025-06-02  
+Last Modified   : 2025-06-02  
+Version         : 1.0  
+CVEs            : N/A  
+Plugin IDs      : N/A  
+STIG-ID         : WN10-AC-000005
+
 #>
 
 # Set Account Lockout Duration to 15 minutes using secedit
@@ -26,39 +27,54 @@ signature="\$CHICAGO\$"
 Revision=1
 "@
 
-# Write .inf file to temporary location
 $infPath = "$env:TEMP\V-220002-lockout-duration.inf"
 $infContent | Set-Content -Path $infPath -Encoding Unicode
 
-# Apply the configuration
 secedit /configure /db secedit.sdb /cfg $infPath /quiet
 
-# Confirm success
 Start-Sleep -Seconds 2
 Write-Output "✅ Account lockout duration has been set to 15 minutes. (STIG: WN10-AC-000005)"
 
 
 <#
-README
+╔════════════════════════════════════════════════════════════════╗
+║        STIG REMEDIATION SUMMARY – WN10-AC-000005              ║
+╚════════════════════════════════════════════════════════════════╝
 
-# STIG: WN10-AC-000005 - Configure Account Lockout Duration
+■ Rule Title  
+  Account lockout duration must be configured to 15 minutes or greater
 
-## 🔐 Overview
+■ STIG ID  
+  WN10-AC-000005
 
-This STIG requires that **Windows 10 systems** enforce an **Account Lockout Duration** of **at least 15 minutes** to reduce the effectiveness of brute force login attempts.
+■ Description  
+  Defines how long an account remains locked after failed login attempts.
+  A value of 15 minutes or greater is required. Setting to 0 (admin unlock)
+  is also permitted.
 
-- **STIG ID:** WN10-AC-000005  
-- **Rule Title:** Account lockout duration must be configured to 15 minutes or greater  
-- **Severity:** Medium  
-- **Fix Text:** Set the policy at:
-  
-  `Computer Configuration >> Windows Settings >> Security Settings >> Account Policies >> Account Lockout Policy >> "Account lockout duration"`  
-  to **15 minutes or greater**. A setting of `0` (manual unlock by admin) is also acceptable.
+■ Remediation Details  
+  • Policy Path  : Account Lockout Policy  
+  • Setting      : Account lockout duration  
+  • Required     : 15 minutes or more (or 0 for manual unlock)
 
-## ⚙️ What This Script Does
+■ Script Logic  
 
-This PowerShell script:
-- Creates a `.inf` security template file
-- Sets `LockoutDuration = 15`
-- Applies it using `secedit`
+    $infContent = @"
+    [Unicode]
+    Unicode=yes
+    [System Access]
+    LockoutDuration = 15
+    [Version]
+    signature="\$CHICAGO\$"
+    Revision=1
+    "@
 
+    $infPath = "$env:TEMP\V-220002-lockout-duration.inf"
+    $infContent | Set-Content -Path $infPath -Encoding Unicode
+
+    secedit /configure /db secedit.sdb /cfg $infPath /quiet
+
+■ Compliance Result  
+  ✅ Account lockout duration set to 15 minutes and compliant with the STIG.
+
+#>
