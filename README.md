@@ -53,7 +53,7 @@ This project helps **automate that process** using **PowerShell** and is suitabl
 
 ## 💼 Author
 
-**Jonathan Gistand**  
+**Jonathan G**  
 [LinkedIn](https://linkedin.com/in/jgdev/) • [GitHub](https://github.com/jgdev-arc)
 
 ---
