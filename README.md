@@ -1,8 +1,8 @@
-# 🛡️ Windows 10 STIG Remediation Scripts
+# 🛡️ Windows STIG Remediation Scripts
 
-A curated collection of PowerShell scripts that implement **Windows 10 Security Technical Implementation Guide (STIG)** remediations published by DISA. Each script targets a specific STIG ID, hardens the system according to DoD cybersecurity standards, and includes inline documentation for clarity and auditing.
+A curated collection of PowerShell scripts that implement **Windows Security Technical Implementation Guide (STIG)** remediations published by DISA. Each script targets a specific STIG ID, hardens the system according to DoD cybersecurity standards, and includes inline documentation for clarity and auditing.
 
-> ⚙️ Built to assist system administrators, cybersecurity professionals, and compliance teams in automating secure baseline enforcement across Windows 10 environments.
+> ⚙️ Built to assist system administrators, cybersecurity professionals, and compliance teams in automating secure baseline enforcement across Windows environments.
 
 ---
 
@@ -10,7 +10,7 @@ A curated collection of PowerShell scripts that implement **Windows 10 Security 
 
 This project contains standalone PowerShell scripts that:
 
-- Enforce **DISA STIG** policies on Windows 10 systems
+- Enforce **DISA STIG** policies on Windows 10/11 systems
 - Address specific findings from vulnerability assessments (e.g., SCAP scans)
 - Include **documentation**, **script logic**, and **expected outcomes**
 - Are version-controlled and auditable for use in production or lab hardening efforts
@@ -63,6 +63,3 @@ This project helps **automate that process** using **PowerShell** and is suitabl
 Each script is self-contained and can be executed directly in PowerShell (with administrator privileges).  
 Scripts are named for traceability and mapped to their respective STIG IDs.
 
-Example:
-```powershell
-.\V-220711-disable-basic-auth-wdigest.ps1
