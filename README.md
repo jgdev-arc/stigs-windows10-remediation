@@ -19,18 +19,18 @@ Each script targets one STIG ID and can be executed independently or grouped int
 
 ---
 
-## 🧩 Sample STIG Remediations Included
+## 🧩 Sample of the STIG Remediations Included
 
 | STIG ID            | Description                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
-| `WN10-AC-000020`   | Enforces password history to remember 24 previous passwords                 |
-| `WN10-CC-000035`   | Disables WDigest authentication to prevent credential dumping               |
-| `WN10-SO-000250`   | Requires UAC elevation prompts on the secure desktop                        |
-| `WN10-UR-000070`   | Denies network logon to Administrators and SYSTEM accounts                  |
-| `WN10-CC-000310`   | Prevents users from modifying installation options via Windows Installer    |
-| `WN10-CC-000355`   | Ensures WinRM does not store RunAs credentials                              |
+| [WN11-CC-000315](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-CC-000315.ps1)   | Disables Windows Installer elevated privilege installations                 |
+| [WN11-CC-000090](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-CC-000090.ps1)   | Forces Group Policy settings to reapply during refresh cycle                |
+| [WN11-CC-000197](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-CC-000197.ps1)   | Disables Microsoft consumer experiences and app suggestions                 |
+| [WN11-CC-000285](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-CC-000285.ps1)   | Requires secure RPC communication for Remote Desktop Services               |
+| [WN11-00-000170](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-00-000170.ps1)   | Disables the SMBv1 protocol on Windows SMB clients                          |
+| [WN11-AU-000083](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-AU-000083.ps1)   | Enables auditing of Other Object Access Events successes                    |
 
-More remediations are continuously being added.
+New remediations are added periodically.
 
 ---
 
