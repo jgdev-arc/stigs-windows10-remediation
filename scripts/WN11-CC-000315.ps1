@@ -3,7 +3,7 @@
 ║                          SCRIPT NOTES                          ║
 ╚════════════════════════════════════════════════════════════════╝
 
-Author          : Jonathan Gistand  
+Author          : Jonathan G  
 LinkedIn        : linkedin.com/in/jgdev/  
 GitHub          : github.com/jgdev-arc  
 Date Created    : 2025-06-02  
