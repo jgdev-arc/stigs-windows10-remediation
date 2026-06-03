@@ -30,7 +30,7 @@ Each script targets one STIG ID and can be executed independently or grouped int
 | [WN11-00-000170](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-00-000170.ps1)   | Disables the SMBv1 protocol on Windows SMB clients                          |
 | [WN11-AU-000083](https://github.com/jgdev-arc/stigs-windows10-remediation/blob/main/scripts/WN11-AU-000083.ps1)   | Enables auditing of Other Object Access Events successes                    |
 
-New remediations are added periodically.
+New remediations are added periodically. [You can view all of my completed STIGs here](https://github.com/jgdev-arc/stigs-windows10-remediation/tree/main/scripts).
 
 ---
 
